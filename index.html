@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACTIVITY</title>
+  <link rel="stylesheet" href="intro.css" />
+</head>
+<body>
+
+  <!-- Greeting Screen -->
+  <div class="greeting" id="greeting">
+    <h1>Hi po 💕</h1>
+    <p>I made something for you</p>
+    <button onclick="startLetter()">📩 Read me</button>
+  </div>
+
+  <!-- Letter Screen -->
+  <div class="letter" id="letter" style="display:none;">
+    <p id="typewriter"></p>
+
+    <button id="continueBtn" onclick="goNext()" style="display:none;">
+      Continue →
+    </button>
+  </div>
+
+  <script>
+    const text = `To my Dearest, Jana (behbyy ko^^)💕\n\n
+Helloww Behbyy, I know this isn't the most romantic time and way for me to express my love for you, considering the loads of work that you have right now and the distance between the two of us.   .\n\n
+But still, I want to show it in a way that would show my effort and sincerity, given that I cannot say this in person. I really really really like you po (hindi halata nohh). You are the most wonderful person I have met,  
+\n\n
+Ready?`;
+
+    const speed = 35; // base typing speed
+    let index = 0;
+
+    const greeting = document.getElementById("greeting");
+    const letter = document.getElementById("letter");
+    const target = document.getElementById("typewriter");
+    const btn = document.getElementById("continueBtn");
+
+    function startLetter() {
+      greeting.style.display = "none";
+      letter.style.display = "block";
+      typeWriter();
+    }
+
+    function typeWriter() {
+      if (index < text.length) {
+        const char = text.charAt(index);
+        target.innerHTML += char === "\n" ? "<br>" : char;
+        index++;
+        setTimeout(typeWriter, speed + Math.random() * 30); // random interval for smooth effect
+      } else {
+        btn.style.display = "inline-block"; // show continue button
+      }
+    }
+
+    function goNext() {
+      window.location.href = "question.html";
+    }
+  </script>
+
+</body>
+</html>

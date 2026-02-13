@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f9e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Georgia', serif;
+}
+
+/* Greeting Screen */
+.greeting {
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.greeting h1 {
+  font-size: 3em;
+  color: #d32f2f;
+}
+
+.greeting p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.greeting button {
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d32f2f;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.greeting button:hover {
+  transform: scale(1.05);
+}
+
+/* Letter Screen */
+.letter {
+  background-color: #ffffff;
+  max-width: 600px;
+  width: 90%;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.letter p {
+  font-size: 1em;       /* smaller font */
+  line-height: 1.4;     /* tighter line spacing */
+  margin: 0 0 12px 0;   /* compact paragraph spacing */
+  color: #333;
+}
+
+/* Continue Button */
+#continueBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #d32f2f;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#continueBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
